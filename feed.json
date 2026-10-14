@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "support_url": "",
+  "ads": [
+    {
+      "id": "px6-ru-1",
+      "lang": ["ru"],
+      "placements": ["sidebar", "status"],
+      "disclosure": "Реклама · px6.net",
+      "title": "Нужны прокси?",
+      "text": "Индивидуальные прокси на px6.net. Скидка 5% по промокоду PROSTO5.",
+      "cta": "Купить",
+      "url": "https://px6.net/?r=1061962",
+      "weight": 1
+    },
+    {
+      "id": "px6-en-1",
+      "lang": ["en"],
+      "placements": ["sidebar", "status"],
+      "disclosure": "Ad · px6.net",
+      "title": "Need proxies?",
+      "text": "Private proxies on px6.net. 5% off with coupon PROSTO5.",
+      "cta": "Buy",
+      "url": "https://px6.net/?r=1061962",
+      "weight": 1
+    }
+  ]
+}

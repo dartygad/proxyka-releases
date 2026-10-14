@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://dartygad.github.io/proxyka-releases/sitemap.xml

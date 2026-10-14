@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Proxyka — прокси для отдельных программ Windows (SOCKS5, HTTP)</title>
+  <meta name="description" content="Proxyka направляет выбранные программы Windows через ваш прокси SOCKS5 или HTTP, а остальные — напрямую. Правила по программам, сайтам и портам, защита от утечек, импорт прокси из px6.net. Простая альтернатива Proxifier на русском.">
+  <link rel="canonical" href="https://dartygad.github.io/proxyka-releases/">
+  <link rel="alternate" hreflang="ru" href="https://dartygad.github.io/proxyka-releases/">
+  <link rel="alternate" hreflang="en" href="https://dartygad.github.io/proxyka-releases/en/">
+  <link rel="icon" href="img/favicon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Proxyka — прокси для отдельных программ Windows">
+  <meta property="og:description" content="Нужные программы — через прокси, остальные — напрямую. Настройка за 2 минуты.">
+  <meta property="og:image" content="https://dartygad.github.io/proxyka-releases/img/shot-buy.jpg">
+  <meta property="og:url" content="https://dartygad.github.io/proxyka-releases/">
+  <link rel="stylesheet" href="site.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Proxyka",
+    "operatingSystem": "Windows 10, Windows 11",
+    "applicationCategory": "NetworkingApplication",
+    "description": "Программа для Windows, которая направляет трафик выбранных программ через прокси SOCKS5 или HTTP по правилам.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RUB" },
+    "downloadUrl": "https://github.com/dartygad/proxyka-releases/releases/latest",
+    "inLanguage": ["ru", "en"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Как пустить через прокси только одну программу?", "acceptedAnswer": { "@type": "Answer", "text": "Установите Proxyka, добавьте прокси (вставьте строку адрес:порт:логин:пароль), откройте раздел «Программы» и нажмите «Через прокси» напротив нужной программы. Остальные программы продолжат работать напрямую." } },
+      { "@type": "Question", "name": "Чем Proxyka отличается от VPN?", "acceptedAnswer": { "@type": "Answer", "text": "VPN пускает весь трафик компьютера через один сервер. Proxyka работает с вашими прокси и позволяет выбрать, какие программы, сайты и порты идут через прокси, а какие напрямую." } },
+      { "@type": "Question", "name": "Это аналог Proxifier?", "acceptedAnswer": { "@type": "Answer", "text": "Да, Proxyka решает ту же задачу — маршрутизацию программ через прокси по правилам, — но проще в настройке, на русском языке и с импортом прокси из px6.net." } },
+      { "@type": "Question", "name": "Какие прокси поддерживаются?", "acceptedAnswer": { "@type": "Answer", "text": "SOCKS5 и HTTP(S) прокси с логином и паролем или без. Можно указать резервный прокси на случай сбоя основного." } },
+      { "@type": "Question", "name": "Что будет, если прокси перестанет работать?", "acceptedAnswer": { "@type": "Answer", "text": "Вы сами выбираете: заблокировать соединение (трафик не уйдёт в обход прокси), пустить напрямую или переключиться на резервный прокси." } },
+      { "@type": "Question", "name": "Где взять прокси?", "acceptedAnswer": { "@type": "Answer", "text": "Например, на px6.net — индивидуальные прокси разных стран. По промокоду PROSTO5 скидка 5%. Proxyka умеет импортировать купленные там прокси по API-ключу." } }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <img src="img/logo.png" alt="">
+      <span class="brand">Proxyka</span>
+      <nav><a href="#how">Как работает</a><a href="#features">Возможности</a><a href="#faq">Вопросы</a><a href="en/">English</a></nav>
+    </header>
+
+    <div class="hero">
+      <div>
+        <h1>Прокси для <span>нужных программ</span>. Остальное — напрямую.</h1>
+        <p class="lead">Proxyka направляет выбранные программы Windows через ваш SOCKS5 или HTTP прокси: браузер — через другую страну, Telegram — через прокси, а банк и игры — как обычно.</p>
+        <a class="btn primary" href="https://github.com/dartygad/proxyka-releases/releases/latest">Скачать для Windows</a>
+        <a class="btn ghost" href="#how">Как это работает</a>
+        <p class="note">Windows 10 и 11, 64-бит · бесплатно · русский и английский язык</p>
+      </div>
+      <img src="img/shot-buy.jpg" alt="Мастер первого запуска Proxyka: где купить прокси и что скопировать" width="1200" height="814">
+    </div>
+  </div>
+
+  <section class="soft" id="how">
+    <div class="wrap">
+      <h2>Как пустить программу через прокси — 3 шага</h2>
+      <div class="grid3">
+        <div class="card"><div class="step-num">1</div><h3>Купите прокси</h3><p>Например, на px6.net. При оплате введите промокод <b>PROSTO5</b> — скидка 5%. Скопируйте строку адрес:порт:логин:пароль.</p></div>
+        <div class="card"><div class="step-num">2</div><h3>Вставьте строку</h3><p>Proxyka сама разберёт адрес, порт, логин и пароль и проверит, что прокси работает и открывает интернет.</p></div>
+        <div class="card"><div class="step-num">3</div><h3>Выберите программы</h3><p>Весь трафик компьютера или только нужные программы. Нажмите «Включить» — готово.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="wrap">
+      <h2>Возможности</h2>
+      <div class="grid3">
+        <div class="card"><h3>Правила по программам</h3><p>Список запущенных программ с понятными названиями и значками: видно, кто куда подключается. Одна кнопка — и программа идёт через прокси.</p></div>
+        <div class="card"><h3>Сайты, IP и порты</h3><p>Правила по доменам (сайт и все поддомены), IP-адресам, подсетям и портам. Проверяются сверху вниз.</p></div>
+        <div class="card"><h3>Без утечек</h3><p>Если прокси упал — соединение блокируется, а не уходит напрямую. UDP (QUIC) программ, идущих через прокси, блокируется.</p></div>
+        <div class="card"><h3>Резервный прокси</h3><p>Основной сервер недоступен — Proxyka сама переключится на запасной.</p></div>
+        <div class="card"><h3>Импорт из px6.net</h3><p>Вставьте API-ключ — все купленные прокси добавятся сами, со сроками действия и напоминанием об окончании.</p></div>
+        <div class="card"><h3>Журнал и поддержка</h3><p>Видно, какое правило сработало и почему. Вопрос разработчику — прямо из программы.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="soft">
+    <div class="wrap shots">
+      <figure><img src="img/shot-paste.jpg" alt="Вставка строки прокси: адрес, порт, логин и пароль разбираются автоматически" loading="lazy" width="1200" height="814"><figcaption>Вставьте строку прокси — поля заполнятся сами.</figcaption></figure>
+      <figure><img src="img/shot-tour.jpg" alt="Подсказки по интерфейсу Proxyka после первой настройки" loading="lazy" width="1200" height="814"><figcaption>После настройки — короткая экскурсия по программе.</figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="promo">
+        <div><div style="font-size:22px;font-weight:700">Нужны прокси?</div><div>Индивидуальные прокси на px6.net — скидка 5% по промокоду <b class="code">PROSTO5</b></div></div>
+        <a class="btn" href="https://px6.net/?r=1061962" rel="sponsored noopener">Купить прокси</a>
+      </div>
+      <p class="note">Реклама. px6.net</p>
+    </div>
+  </section>
+
+  <section class="soft">
+    <div class="wrap">
+      <h2>Proxyka, VPN и Proxifier</h2>
+      <table class="cmp">
+        <tr><th></th><th>Proxyka</th><th>Обычный VPN</th><th>Proxifier</th></tr>
+        <tr><td>Только выбранные программы</td><td>✓</td><td>—</td><td>✓</td></tr>
+        <tr><td>Ваши собственные прокси</td><td>✓</td><td>—</td><td>✓</td></tr>
+        <tr><td>Русский интерфейс и мастер настройки</td><td>✓</td><td>по-разному</td><td>—</td></tr>
+        <tr><td>Импорт прокси из px6.net</td><td>✓</td><td>—</td><td>—</td></tr>
+        <tr><td>Цена</td><td>бесплатно</td><td>подписка</td><td>платная лицензия</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <h2>Частые вопросы</h2>
+      <details><summary>Как пустить через прокси только одну программу?</summary><p>Установите Proxyka, добавьте прокси (вставьте строку адрес:порт:логин:пароль), откройте раздел «Программы» и нажмите «Через прокси» напротив нужной программы. Остальные программы продолжат работать напрямую.</p></details>
+      <details><summary>Как пустить Telegram на компьютере через прокси?</summary><p>В разделе «Программы» найдите Telegram и нажмите «Через прокси». Если трафик Telegram не идёт — проверьте журнал: там видно, какое правило сработало.</p></details>
+      <details><summary>Чем Proxyka отличается от VPN?</summary><p>VPN пускает весь трафик компьютера через один сервер. Proxyka работает с вашими прокси и позволяет выбрать, какие программы, сайты и порты идут через прокси, а какие напрямую.</p></details>
+      <details><summary>Это аналог Proxifier?</summary><p>Да, Proxyka решает ту же задачу — маршрутизацию программ через прокси по правилам, — но проще в настройке, на русском языке и с импортом прокси из px6.net.</p></details>
+      <details><summary>Какие прокси поддерживаются?</summary><p>SOCKS5 и HTTP(S) прокси с логином и паролем или без. Можно указать резервный прокси на случай сбоя основного.</p></details>
+      <details><summary>Что будет, если прокси перестанет работать?</summary><p>Вы сами выбираете: заблокировать соединение (трафик не уйдёт в обход прокси), пустить напрямую или переключиться на резервный прокси.</p></details>
+      <details><summary>Как проверить, что программа идёт через прокси?</summary><p>Откройте в браузере 2ip.ru — там будет адрес и страна прокси. В журнале Proxyka видно каждое соединение и выбранный путь.</p></details>
+      <details><summary>Где взять прокси?</summary><p>Например, на px6.net — индивидуальные прокси разных стран. По промокоду PROSTO5 скидка 5%. Proxyka умеет импортировать купленные там прокси по API-ключу.</p></details>
+      <details><summary>Безопасно ли это?</summary><p>Пароли от прокси хранятся зашифрованными средствами Windows и не попадают в журналы. Обновления подписаны цифровым ключом: подделанное обновление программа не установит.</p></details>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">© Proxyka · <a href="https://github.com/dartygad/proxyka-releases/releases/latest">Скачать</a> · <a href="en/">English</a></div>
+  </footer>
+</body>
+</html>
